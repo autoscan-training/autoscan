@@ -33,17 +33,17 @@
     line-height: 1.6;
 }
 
-   /* >>> MOBILE BACKGROUND FIX >>> */
+/* === MOBILE BACKGROUND FIX (iPhone, Android) === */
 @media (max-width: 768px) {
     body {
-        background:
-            radial-gradient(circle at top, rgba(10,10,40,0.35) 0, rgba(5,5,9,0.75) 55%),
-            url("img/bg-autoscan.jpg") center top / cover no-repeat !important;
+        background-image: url("img/bg-autoscan.jpg") !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
+
+        /* Safari-ийн fixed баг болдог тул mobile дээр болиулна */
         background-attachment: scroll !important;
     }
-}
-/* <<< MOBILE BACKGROUND FIX <<< */
-
 }
 
       a { color: inherit; text-decoration: none; }
@@ -864,6 +864,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
