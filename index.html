@@ -34,19 +34,22 @@
         line-height: 1.6;
     }
 
-   /* === MOBILE BACKGROUND FIX (iPhone, Android) === */
+  /* === PERFECT MOBILE BACKGROUND (iPhone, Android) === */
 @media (max-width: 768px) {
     body {
-        background:
-            radial-gradient(circle at top, rgba(10,10,40,0.35) 0%, rgba(5,5,9,0.75) 55%),
-            url("img/bg-autoscan.jpg");
+        background-color: #050509 !important;    /* суурь өнгө */
+        background-image: url("img/bg-autoscan.jpg") !important;
         background-size: cover !important;
-        background-position: center top !important;
         background-repeat: no-repeat !important;
+
+        /* iPhone-т яг хэмжээ тааруулах position */
+        background-position: center 45% !important;
+
+        /* iPhone дээр fixed ажилладаггүй тул scroll байлгана */
         background-attachment: scroll !important;
 
+   }
 }
-    }
 
     a { color: inherit; text-decoration: none; }
 
@@ -867,6 +870,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
