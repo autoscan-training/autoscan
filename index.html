@@ -312,7 +312,41 @@
             border: 1px solid var(--border-soft);
             font-size: 0.9rem;
         }
+        .details-btn {
+    margin-top: 0.6rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent-soft);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
 
+.details-btn:hover {
+    background: var(--accent);
+    color: #050509;
+}
+
+.course-details {
+    display: none;
+    margin-top: 0.8rem;
+    background: #0f0f17;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    font-size: 0.85rem;
+}
+
+.course-details ul {
+    padding-left: 1.1rem;
+}
+
+.course-details li {
+    margin-bottom: 0.35rem;
+}
         .course-level {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -699,55 +733,122 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
                     </div>
                 </div>
 
-                <div class="course-grid">
-                    <div class="course-card">
-                        <div class="course-level">Level 1</div>
-                        <div class="course-name">AutoScan Electrical Level 1</div>
-                        <p class="course-desc">
-                            Цахилгааны суурь, мультиметр ашиглалт, схем унших эхлэл,
-                            basic sensor/actuator шалгах.
-                        </p>
-                        <div class="course-price">Төлбөр: <strong>1,000,000₮</strong></div>
-                    </div>
+               <div class="course-grid">
+    <!-- LEVEL 1 -->
+    <div class="course-card">
+        <div class="course-level">Level 1</div>
+        <div class="course-name">AutoScan Electrical Level 1</div>
+        <p class="course-desc">
+            Цахилгааны суурь ойлголт, мультиметр, схем унших үндэс, 
+            basic sensor/actuator шалгах.
+        </p>
 
-                    <div class="course-card">
-                        <div class="course-level">Level 2</div>
-                        <div class="course-name">Electrical Level 2</div>
-                        <p class="course-desc">
-                            Дунд шатны wiring, relay/fuse circuits, signal шалгалт,
-                            бодит гэмтэл дээр ажиллах.
-                        </p>
-                        <div class="course-price">Төлбөр: <strong>1,300,000₮</strong></div>
-                    </div>
+        <button class="details-btn" onclick="toggleDetails('lvl1')">Дэлгэрэнгүй</button>
+        <div id="lvl1" class="course-details">
+            <ul>
+                <li>Цахилгааны үндсэн ойлголт (V, A, Ω, P)</li>
+                <li>Мультиметрийн зөв ашиглалт (DC/AC, continuity, resistance)</li>
+                <li>Fuse, relay, ground point шалгах үндэс</li>
+                <li>Энгийн wiring diagram унших, тэмдэглэгээ таних</li>
+                <li>Basic sensor (temp, MAP, MAF) ба actuator (fan, relay) шалгах</li>
+            </ul>
+        </div>
 
-                    <div class="course-card">
-                        <div class="course-level">Diagnostics</div>
-                        <div class="course-name">Diagnostics Masterclass</div>
-                        <p class="course-desc">
-                            Оношлогооны багажийг зөв ашиглах, test plan, flowchart,
-                            “parts changer” биш “problem solver” болгох сургалт.
-                        </p>
-                        <div class="course-price">Төлбөр: <strong>1,500,000₮</strong></div>
-                    </div>
+        <div class="course-price">Төлбөр: <strong>1,000,000₮</strong></div>
+    </div>
 
-                    <div class="course-card">
-                        <div class="course-level">ECU & CAN</div>
-                        <div class="course-name">ECU & CAN Training</div>
-                        <p class="course-desc">
-                            ECU бүтэц, flash/EEPROM ойлголт, CAN bus үндэс, basic tuning logic.
-                        </p>
-                        <div class="course-price">Төлбөр: <strong>2,000,000₮</strong></div>
-                    </div>
+    <!-- LEVEL 2 -->
+    <div class="course-card">
+        <div class="course-level">Level 2</div>
+        <div class="course-name">AutoScan Electrical Level 2</div>
+        <p class="course-desc">
+            Дунд шатны wiring, relay/fuse circuits, signal шалгалт,
+            бодит гэмтэл дээр ажиллах.
+        </p>
 
-                    <div class="course-card">
-                        <div class="course-level">Bundle</div>
-                        <div class="course-name">Full AutoScan Package</div>
-                        <p class="course-desc">
-                            Electrical Level 1–3 + Diagnostics + ECU & CAN багц сургалт.
-                        </p>
-                        <div class="course-price">Төлбөр: <strong>…₮ (тохиролцоно)</strong></div>
-                    </div>
-                </div>
+        <button class="details-btn" onclick="toggleDetails('lvl2')">Дэлгэрэнгүй</button>
+        <div id="lvl2" class="course-details">
+            <ul>
+                <li>Voltage drop test – алдагдал хэмжих практик</li>
+                <li>Load test – ачаалал өгч шалгах арга</li>
+                <li>Complex wiring diagram – several module-той схем унших</li>
+                <li>Body control system (BCM, lighting, wiper, door lock) ойлголт</li>
+                <li>Бодит гэмтэл дээр алдаа хайх (case study)</li>
+            </ul>
+        </div>
+
+        <div class="course-price">Төлбөр: <strong>1,300,000₮</strong></div>
+    </div>
+
+    <!-- DIAGNOSTICS MASTERCLASS -->
+    <div class="course-card">
+        <div class="course-level">Diagnostics</div>
+        <div class="course-name">Diagnostics Masterclass</div>
+        <p class="course-desc">
+            Оношлогооны багаж, test plan, flowchart ашиглаж “parts changer” биш 
+            “problem solver” болгох сургалт.
+        </p>
+
+        <button class="details-btn" onclick="toggleDetails('diag')">Дэлгэрэнгүй</button>
+        <div id="diag" class="course-details">
+            <ul>
+                <li>OEM diagnostic thinking – test plan, guided functions ойлголт</li>
+                <li>DTC-ээс шууд эд анги солихгүй сэтгэлгээний логик</li>
+                <li>Live data / measuring blocks унших, харьцуулалт хийх</li>
+                <li>Short/long term fuel trim, lambda, boost, temp data анализ</li>
+                <li>Case study: 3–5 бодит гэмтэл дээр алгоритм гаргаж шийдэх</li>
+            </ul>
+        </div>
+
+        <div class="course-price">Төлбөр: <strong>1,500,000₮</strong></div>
+    </div>
+
+    <!-- ECU & CAN TRAINING -->
+    <div class="course-card">
+        <div class="course-level">ECU & CAN</div>
+        <div class="course-name">ECU & CAN Training</div>
+        <p class="course-desc">
+            ECU бүтэц, flash/EEPROM ойлголт, CAN bus үндэс, basic tuning logic.
+        </p>
+
+        <button class="details-btn" onclick="toggleDetails('ecu')">Дэлгэрэнгүй</button>
+        <div id="ecu" class="course-details">
+            <ul>
+                <li>ECU architecture (Flash, EEPROM, Bootloader, OTP) суурь ойлголт</li>
+                <li>OBD, bench, boot mode програмчлалын ялгаа</li>
+                <li>CAN bus үндэс – ID, frame, baudrate, termination</li>
+                <li>CAN sniffing & basic reverse engineering (theory level)</li>
+                <li>Stage 1 tuning logic – torque, boost, lambda, limiter ойлголт</li>
+            </ul>
+        </div>
+
+        <div class="course-price">Төлбөр: <strong>2,000,000₮</strong></div>
+    </div>
+
+    <!-- FULL PACKAGE -->
+    <div class="course-card">
+        <div class="course-level">Bundle</div>
+        <div class="course-name">Full AutoScan Package</div>
+        <p class="course-desc">
+            Electrical Level 1–3 + Diagnostics Masterclass + ECU & CAN Training
+            багц сургалт (инженерийн түвшний бүрэн суурь).
+        </p>
+
+        <button class="details-btn" onclick="toggleDetails('fullpkg')">Дэлгэрэнгүй</button>
+        <div id="fullpkg" class="course-details">
+            <ul>
+                <li>Electrical Level 1–2 бүрэн хөтөлбөр</li>
+                <li>Diagnostics Masterclass – бодит кейс дээр ажиллах модуль</li>
+                <li>ECU & CAN үндсэн ойлголт, инженерийн түвшний суурь мэдлэг</li>
+                <li>Гараж дээрх практик day – бодит машин дээр тест хийх</li>
+                <li>Certificate + дараагийн шатны advanced сургалтад давуу эрх</li>
+            </ul>
+        </div>
+
+        <div class="course-price">Төлбөр: <strong>…₮ (тохиролцоно)</strong></div>
+    </div>
+</div>
+
             </div>
         </section>
 
@@ -880,8 +981,26 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
             <div>“Diagnose smart. Fix right. Learn once.”</div>
         </div>
     </footer>
+    <script>
+document.querySelectorAll(".btn-details").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+        const box = document.getElementById(target);
+
+        if (box.style.display === "block") {
+            box.style.display = "none";
+            btn.textContent = "Дэлгэрэнгүй";
+        } else {
+            box.style.display = "block";
+            btn.textContent = "Хаах";
+        }
+    });
+});
+</script>
+
 </body>
 </html>
+
 
 
 
