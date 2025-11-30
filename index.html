@@ -982,21 +982,22 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
         </div>
     </footer>
     <script>
-document.querySelectorAll(".btn-details").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-        const box = document.getElementById(target);
+        function toggleDetails(targetId) {
+            const box = document.getElementById(targetId);
+            if (!box) return;
 
-        if (box.style.display === "block") {
-            box.style.display = "none";
-            btn.textContent = "Дэлгэрэнгүй";
-        } else {
-            box.style.display = "block";
-            btn.textContent = "Хаах";
+            const isOpen = box.style.display === "block";
+
+            // div-ээ нээх/хаах
+            box.style.display = isOpen ? "none" : "block";
+
+            // Тухайн div-ийн яг өмнөх товчыг олж текстийг нь солино
+            const btn = box.previousElementSibling;
+            if (btn && btn.classList.contains("details-btn")) {
+                btn.textContent = isOpen ? "Дэлгэрэнгүй" : "Хаах";
+            }
         }
-    });
-});
-</script>
+    </script>
 
 </body>
 </html>
