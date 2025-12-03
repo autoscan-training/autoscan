@@ -946,48 +946,63 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
 
                 <div class="contact-grid">
                     <form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Нэр</label>
-                                <input type="text" placeholder="Овог, нэр" />
-                            </div>
-                            <div class="form-group">
-                                <label>Утас</label>
-                                <input type="tel" placeholder="Утасны дугаар" />
-                            </div>
-                        </div>
+                      <form id="training-form" class="contact-form">
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Зорилго</label>
-                                <select>
-                                    <option>Засварт цаг авах</option>
-                                    <option>Сургалтанд бүртгүүлэх</option>
-                                    <option>Ерөнхий зөвлөгөө / асуулт</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Сонголт (хэрвээ сургалт бол)</label>
-                                <select>
-                                    <option>AutoScan Electrical Level 1</option>
-                                    <option>Electrical Level 2</option>
-                                    <option>Diagnostics Masterclass</option>
-                                    <option>ECU & CAN Training</option>
-                                    <option>Full Package</option>
-                                </select>
-                            </div>
-                        </div>
+    <h2 class="form-title">Сургалтын онлайн бүртгэл</h2>
+    <p class="form-sub">Доорх мэдээллийг үнэн зөв бөглөнө үү. Манай баг тан руу утсаар холбогдож баталгаажуулна.</p>
 
-                        <div class="form-group">
-                            <label>Машины марк / асуулт</label>
-                            <textarea placeholder="Машины марк, асуудлын товч тайлбар эсвэл өөрийн зорилгоо бичээрэй."></textarea>
-                        </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Нэр</label>
+            <input type="text" id="name" placeholder="Овог, нэр" required />
+        </div>
 
-                        <button type="submit" class="btn-primary">Илгээх (жишээ form)</button>
-                        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.6rem;">
-                            * Form одоогоор жишээ байдлаар байна. Жинхэнэдээ ашиглахдаа email,
-                            Messenger bot, Google Sheet зэрэгтэй холбох боломжтой.
-                        </p>
+        <div class="form-group">
+            <label>Утас</label>
+            <input type="tel" id="phone" placeholder="Утасны дугаар" required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Сонгох сургалт</label>
+        <select id="course" onchange="courseSelectChanged()" required>
+            <option value="" disabled selected>Сургалтаа сонгоно уу</option>
+            <option value="AutoScan Electrical Level">AutoScan Electrical Level 1–3</option>
+            <option value="Diagnostics Masterclass">Diagnostics Masterclass</option>
+            <option value="ECU & CAN Training">ECU & CAN Training</option>
+            <option value="Full Package">Full Package (ALL courses)</option>
+        </select>
+    </div>
+
+    <div class="form-group" id="level-group" style="display:none;">
+        <label>Түвшин</label>
+        <select id="level">
+            <option value="Level 1">Level 1</option>
+            <option value="Level 2">Level 2</option>
+            <option value="Level 3">Level 3</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Нэмэлт мэдээлэл (заавал биш)</label>
+        <textarea id="message" placeholder="Асуулт, хүсэлт, нэмэлт мэдээллээ бичнэ үү."></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary form-btn">Бүртгүүлэх</button>
+</form>
+
+<script>
+function courseSelectChanged() {
+    const course = document.getElementById("course").value;
+    const levelGroup = document.getElementById("level-group");
+
+    if (course === "AutoScan Electrical Level") {
+        levelGroup.style.display = "block";
+    } else {
+        levelGroup.style.display = "none";
+    }
+}
+</script>
                     </form>
 
                     <div class="contact-info-box">
@@ -1039,6 +1054,7 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
 
 </body>
 </html>
+
 
 
 
