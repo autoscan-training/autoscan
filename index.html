@@ -1045,14 +1045,19 @@ form.addEventListener("submit", function (e) {
     })
     .then(res => res.json())
     .then(data => {
-        alert("Амжилттай бүртгүүллээ! Бид удахгүй тан руу холбогдоно.");
-        form.reset();
-        const levelGroup = document.getElementById("level-group");
-        if (levelGroup) levelGroup.style.display = "none";
+        console.log("Response from script:", data);
+        if (data.status === "success") {
+            alert("Амжилттай бүртгүүллээ! Бид удахгүй тан руу холбогдоно.");
+            form.reset();
+            const levelGroup = document.getElementById("level-group");
+            if (levelGroup) levelGroup.style.display = "none";
+        } else {
+            alert("Серверээс алдаа ирлээ: " + (data.message || ""));
+        }
     })
     .catch(err => {
         console.error(err);
-        alert("Алдаа гарлаа. Дахин оролдоно уу эсвэл шууд утсаар холбогдоорой.");
+        alert("Сүлжээний алдаа. Дахин оролдоно уу эсвэл шууд утсаар холбогдоорой.");
     })
     .finally(() => {
         if (btn) {
@@ -1061,19 +1066,6 @@ form.addEventListener("submit", function (e) {
         }
     });
 });
-</script>
-
-<script>
-function courseSelectChanged() {
-    const course = document.getElementById("course").value;
-    const levelGroup = document.getElementById("level-group");
-
-    if (course === "AutoScan Electrical Level") {
-        levelGroup.style.display = "block";
-    } else {
-        levelGroup.style.display = "none";
-    }
-}
 </script>
                     </form>
 
@@ -1126,6 +1118,7 @@ function courseSelectChanged() {
 
 </body>
 </html>
+
 
 
 
