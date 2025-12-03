@@ -945,7 +945,7 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
                 </div>
 
                 <div class="contact-grid">
-                    <form id="training-form" class="contact-form">
+                    <form id="training-form" class="contact-form" method="POST">
 
                 <h2 class="form-title">Сургалтын онлайн бүртгэл</h2>
                 <p class="form-sub">
@@ -1017,14 +1017,14 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
 
 <!-- FORM-ИЙН SCRIPT-ҮҮДИЙГ ЭНД ТАВИНА -->
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyExurpQD7A6g-86Iib3ounOVoXGJ1UP-FDaLaXsB8UxxdQhaP-fob3bABqEKSwVhzl/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzT5skffLDOc-dsRKjsJnq7Yr60JZzV3gmQnwap2XN6rH2G90Q01E4F6BcbWPktrls7/exec";
 
 const form = document.getElementById("training-form");
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const btn = form.querySelector(".form-btn");
+    const btn = form.querySelector(".form-btn") || form.querySelector("button[type='submit']");
     if (btn) {
         btn.disabled = true;
         btn.textContent = "Илгээж байна...";
@@ -1045,14 +1045,14 @@ form.addEventListener("submit", function (e) {
     })
     .then(res => res.json())
     .then(data => {
-        console.log("Response from script:", data);
+        console.log("Response:", data);
         if (data.status === "success") {
             alert("Амжилттай бүртгүүллээ! Бид удахгүй тан руу холбогдоно.");
             form.reset();
             const levelGroup = document.getElementById("level-group");
             if (levelGroup) levelGroup.style.display = "none";
         } else {
-            alert("Серверээс алдаа ирлээ: " + (data.message || ""));
+            alert("Серверийн алдаа: " + (data.message || ""));
         }
     })
     .catch(err => {
@@ -1118,6 +1118,7 @@ form.addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
