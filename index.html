@@ -934,19 +934,19 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
         <!-- CONTACT -->
         <section id="contact">
             <div class="container">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title"><span>Холбоо</span> барих / Онлайн бүртгэл</h2>
-                        <p class="section-subtitle">
-                            Машинаа үзүүлэх эсвэл сургалтанд бүртгүүлэх бол доорх формыг бөглөөд
-                            илгээнэ үү. Бид мессеж, утсаар эргээд холбогдоно.
-                        </p>
-                    </div>
-                </div>
+        <div class="section-header">
+            <div>
+                <h2 class="section-title"><span>Холбоо</span> барих / Онлайн бүртгэл</h2>
+                <p class="section-subtitle">
+                    Машинаа үзүүлэх эсвэл сургалтанд бүртгүүлэх бол доорх формыг бөглөөд
+                    илгээнэ үү. Бид мессеж, утсаар эргээд холбогдоно.
+                </p>
+            </div>
+        </div>
 
-                <div class="contact-grid">
-                    <form id="training-form" class="contact-form" method="POST">
-
+        <div class="contact-grid">
+            <!-- ЗӨВХӨН СУРГАЛТЫН БҮРТГЭЛИЙН FORM -->
+            <form id="training-form" class="contact-form" method="POST">
                 <h2 class="form-title">Сургалтын онлайн бүртгэл</h2>
                 <p class="form-sub">
                     Доорх мэдээллийг үнэн зөв бөглөнө үү. Манай баг тан руу утсаар холбогдож баталгаажуулна.
@@ -986,13 +986,14 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
 
                 <div class="form-group">
                     <label>Нэмэлт мэдээлэл (заавал биш)</label>
-                    <textarea id="message" placeholder="Асуулт, хүсэлт, нэмэлт мэдээллээ бичнэ үү."></textarea>
+                    <textarea id="message"
+                              placeholder="Асуулт, хүсэлт, нэмэлт мэдээллээ бичнэ үү."></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary form-btn">Бүртгүүлэх</button>
             </form>
 
-            <!-- Баруун талын контакт мэдээлэл хэвээрээ -->
+            <!-- БАРУУН ТАЛЫН КОНТАКТ МЭДЭЭЛЭЛ -->
             <div class="contact-info-box">
                 <div class="info-line">
                     <div class="info-label">Утас</div>
@@ -1017,7 +1018,8 @@ Airbag (SRS), ABS/ESP, EPB, Steering Angle, 4x4 систем зэрэг
 
 <!-- FORM-ИЙН SCRIPT-ҮҮДИЙГ ЭНД ТАВИНА -->
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzT5skffLDOc-dsRKjsJnq7Yr60JZzV3gmQnwap2XN6rH2G90Q01E4F6BcbWPktrls7/exec";
+const WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbyExurpQD7A6g-86Iib3ounOVoXGJ1UP-FDaLaXsB8UxxdQhaP-fob3bABqEKSwVhzl/exec";
 
 const form = document.getElementById("training-form");
 
@@ -1118,6 +1120,7 @@ form.addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
