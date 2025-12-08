@@ -542,6 +542,50 @@
             }
         }
     </style>
+    /* ============ MODAL (POPUP) STYLE ============ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    display: none;
+    z-index: 999;
+}
+
+.modal-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0e0e15;
+    border: 1px solid #ff4fa6;
+    box-shadow: 0 0 25px #ff4fa6aa;
+    padding: 25px;
+    width: min(90%, 420px);
+    border-radius: 15px;
+    display: none;
+    z-index: 1000;
+    animation: neonFade 0.25s ease-out;
+}
+
+@keyframes neonFade {
+    from { opacity: 0; transform: translate(-50%, -48%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4fa6;
+}
+
+.modal-close:hover {
+    color: #ff99cc;
+}
+
 </head>
 
 <body>
@@ -1041,6 +1085,7 @@ modalClose.addEventListener("click", () => {
 </div>
 </body>
 </html>
+
 
 
 
