@@ -667,9 +667,7 @@
                     intermittent fault хүртэл нэг цогц хөтөлбөрөөр заана.
                 </p>
 
-                <button class="details-btn" onclick="location.href='https://training.autoscan.mn/electrical'"
-
-
+                <button class="details-btn" onclick="toggleDetails('electrical')">Дэлгэрэнгүй</button>
                 <div id="electrical" class="course-details">
                     <ul>
                         <li><strong>Level 1:</strong> V/A/Ω ойлголт, мультиметр зөв ашиглах</li>
@@ -694,9 +692,7 @@
                     “problem solver” болгох оношлогооны сэтгэлгээний сургалт.
                 </p>
 
-                <button class="details-btn" onclick="location.href='https://training.autoscan.mn/diagnostics'"
-
-
+                <button class="details-btn" onclick="toggleDetails('diag')">Дэлгэрэнгүй</button>
                 <div id="diag" class="course-details">
                     <ul>
                         <li>OEM diagnostic thinking – guided functions, test plan</li>
@@ -719,9 +715,7 @@
                     basic tuning logic-тай танилцуулах инженерийн суурь сургалт.
                 </p>
 
-                <button class="details-btn" onclick="location.href='https://training.autoscan.mn/ecu-can'"
-
-
+                <button class="details-btn" onclick="toggleDetails('ecu')">Дэлгэрэнгүй</button>
                 <div id="ecu" class="course-details">
                     <ul>
                         <li>ECU architecture: Flash, EEPROM, Bootloader, OTP ойлголт</li>
@@ -743,8 +737,7 @@
         зэрэг өндөр хүчдлийн системийг оношлох инженерийн суурь сургалт.
     </p>
 
-    <button class="details-btn" onclick="location.href='https://training.autoscan.mn/hybrid-ev'">Дэлгэрэнгүй</button>
-
+    <button class="details-btn" onclick="toggleDetails('hybrid')">Дэлгэрэнгүй</button>
     <div id="hybrid" class="course-details">
         <ul>
             <li>Hybrid architecture: Series, Parallel, Plug-In ялгаа</li>
@@ -1045,9 +1038,6 @@ lightbox.addEventListener('click', () => {
 
 </body>
 </html>
-
-
-
 
 
 
