@@ -667,18 +667,9 @@
                     intermittent fault хүртэл нэг цогц хөтөлбөрөөр заана.
                 </p>
 
-                <button class="details-btn" onclick="toggleDetails('electrical')">Дэлгэрэнгүй</button>
-                <div id="electrical" class="course-details">
-                    <ul>
-                        <li><strong>Level 1:</strong> V/A/Ω ойлголт, мультиметр зөв ашиглах</li>
-                        <li>Fuse, relay, ground point шалгах практик</li>
-                        <li>Энгийн wiring diagram, тэмдэглэгээ унших</li>
-                        <li><strong>Level 2:</strong> Voltage drop, load test, complex wiring</li>
-                        <li>Body systems (BCM, гэрэл, wiper, door lock) fault хайх</li>
-                        <li><strong>Level 3:</strong> Oscilloscope үндэс, sensor/actuator waveform унших</li>
-                        <li>LIN / CAN / PWM сигнал таних, intermittent fault алгоритм</li>
-                    </ul>
-                </div>
+               <button class="details-btn" onclick="location.href='https://training.autoscan.mn/electrical'">
+    Дэлгэрэнгүй
+</button>
 
                 <div class="course-price">Төлбөр: <strong>1,000,000₮ (1–3 шат багц)</strong></div>
             </div>
@@ -692,16 +683,9 @@
                     “problem solver” болгох оношлогооны сэтгэлгээний сургалт.
                 </p>
 
-                <button class="details-btn" onclick="toggleDetails('diag')">Дэлгэрэнгүй</button>
-                <div id="diag" class="course-details">
-                    <ul>
-                        <li>OEM diagnostic thinking – guided functions, test plan</li>
-                        <li>DTC-ийг шууд эд анги болгож харахгүй логик сэтгэлгээ</li>
-                        <li>Live data / measuring blocks анализ, харьцуулалт</li>
-                        <li>Fuel trim, lambda, boost, temp, pressure data тайлж унших</li>
-                        <li>3–5 бодит кейс дээр үндэслэсэн full case study</li>
-                    </ul>
-                </div>
+               <button class="details-btn" onclick="location.href='https://training.autoscan.mn/diagnostics'">
+    Дэлгэрэнгүй
+</button>
 
                 <div class="course-price">Төлбөр: <strong>1,500,000₮</strong></div>
             </div>
@@ -715,16 +699,9 @@
                     basic tuning logic-тай танилцуулах инженерийн суурь сургалт.
                 </p>
 
-                <button class="details-btn" onclick="toggleDetails('ecu')">Дэлгэрэнгүй</button>
-                <div id="ecu" class="course-details">
-                    <ul>
-                        <li>ECU architecture: Flash, EEPROM, Bootloader, OTP ойлголт</li>
-                        <li>OBD, bench, boot mode програмчлалын ялгаа</li>
-                        <li>CAN frame, ID, baudrate, termination үндсэн ойлголт</li>
-                        <li>CAN sniffing & basic reverse engineering (theory)</li>
-                        <li>Stage 1 tuning logic – torque, boost, lambda, limiter ойлголт</li>
-                    </ul>
-                </div>
+                <button class="details-btn" onclick="location.href='https://training.autoscan.mn/ecu-can'">
+    Дэлгэрэнгүй
+</button>
 
                 <div class="course-price">Төлбөр: <strong>2,000,000₮</strong></div>
             </div>
@@ -737,17 +714,9 @@
         зэрэг өндөр хүчдлийн системийг оношлох инженерийн суурь сургалт.
     </p>
 
-    <button class="details-btn" onclick="toggleDetails('hybrid')">Дэлгэрэнгүй</button>
-    <div id="hybrid" class="course-details">
-        <ul>
-            <li>Hybrid architecture: Series, Parallel, Plug-In ялгаа</li>
-            <li>Inverter / Converter – IGBT, DC-DC үндсэн ойлголт</li>
-            <li>MG1 / MG2 ротер-статор fault, resolver signal</li>
-            <li>HV battery: Cell balancing, SOC, SOH шалгах</li>
-            <li>Insulation / isolation fault – megger test ойлголт</li>
-            <li>High-Voltage safety — lock-out / tag-out</li>
-        </ul>
-    </div>
+    <button class="details-btn" onclick="location.href='https://training.autoscan.mn/hybrid'">
+    Дэлгэрэнгүй
+</button>
 
     <div class="course-price">Төлбөр: <strong>2,500,000₮</strong></div>
 </div>
@@ -997,23 +966,7 @@ form.addEventListener("submit", function (e) {
             <div>“Diagnose smart. Fix right. Learn once.”</div>
         </div>
     </footer>
-    <script>
-        function toggleDetails(targetId) {
-            const box = document.getElementById(targetId);
-            if (!box) return;
-
-            const isOpen = box.style.display === "block";
-
-            // div-ээ нээх/хаах
-            box.style.display = isOpen ? "none" : "block";
-
-            // Тухайн div-ийн яг өмнөх товчыг олж текстийг нь солино
-            const btn = box.previousElementSibling;
-            if (btn && btn.classList.contains("details-btn")) {
-                btn.textContent = isOpen ? "Дэлгэрэнгүй" : "Хаах";
-            }
-        }
-    </script>
+   
 <!-- LIGHTBOX -->
 <div id="lightbox">
     <img id="lightbox-img" src="" alt="">
@@ -1038,6 +991,7 @@ lightbox.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
