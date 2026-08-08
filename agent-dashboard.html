@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoScan Agent Dashboard</title>
+  <link rel="stylesheet" href="agent-dashboard.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="agent.html">AUTO<span>SCAN</span><small>AGENT CRM</small></a>
+    <nav>
+      <button class="nav-item active" data-view="overview">Overview</button>
+      <button class="nav-item" data-view="leads">Leads</button>
+      <button class="nav-item" data-view="bookings">Bookings</button>
+    </nav>
+    <a class="back" href="agent.html">← Agent page</a>
+  </aside>
+
+  <main class="main">
+    <header class="main-head">
+      <div>
+        <p class="eyebrow">AUTOSCAN AGENT V1</p>
+        <h1>Dashboard</h1>
+      </div>
+      <button id="exportBtn" class="outline">CSV татах</button>
+    </header>
+
+    <section id="overviewView" class="view active">
+      <div class="stats">
+        <article><span>Нийт lead</span><strong id="totalLeads">0</strong></article>
+        <article><span>Booking request</span><strong id="bookingCount">0</strong></article>
+        <article><span>AI Agent lead</span><strong id="aiCount">0</strong></article>
+        <article><span>Өнөөдөр</span><strong id="todayCount">0</strong></article>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">LATEST</p><h2>Сүүлийн lead-үүд</h2></div>
+          <button class="outline" data-open-view="leads">Бүгдийг харах</button>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Огноо</th><th>Хэрэглэгч</th><th>Машин</th><th>Эх үүсвэр</th><th>Статус</th></tr></thead><tbody id="latestRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="leadsView" class="view">
+      <div class="toolbar">
+        <input id="searchInput" placeholder="Нэр, утас, машин, асуудлаар хайх..." />
+        <select id="statusFilter"><option value="">Бүх статус</option><option>NEW</option><option>BOOKING_REQUEST</option><option>CONTACTED</option><option>BOOKED</option><option>WON</option><option>LOST</option></select>
+      </div>
+      <div class="panel">
+        <div class="table-wrap"><table><thead><tr><th>Огноо</th><th>Нэр</th><th>Утас</th><th>Машин</th><th>Үйлчилгээ</th><th>Асуудал</th><th>Source</th><th>Статус</th><th></th></tr></thead><tbody id="leadRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="bookingsView" class="view">
+      <div class="panel">
+        <div class="panel-head"><div><p class="eyebrow">BOOKINGS</p><h2>Цаг захиалгын хүсэлт</h2></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Огноо</th><th>Нэр</th><th>Утас</th><th>Машин</th><th>Үйлчилгээ</th><th>Хүссэн цаг</th><th>Статус</th></tr></thead><tbody id="bookingRows"></tbody></table></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="agent-dashboard.js"></script>
+</body>
+</html>
